@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">materialUI</string>
+    <string name="page_title">Hello</string>
+    <string name="favorite">Demo</string>
+    <string name="content_description_favorite">Description</string>
+    <string name="search">Seach</string>
+    <string name="content_description_search">Search description</string>
+    <string name="more">more</string>
+    <string name="content_description_more">more description</string>
+    <string name="google_play">Google Play</string>
+    <string name="text_label_1"><![CDATA[APPS & GAMES]]></string>
+    <string name="text_label_2">BOOKS</string>
+    <string name="contained_button_1">top charts</string>
+    <string name="contained_button_2">games</string>
+    <string name="contained_button_3">categories</string>
+    <string name="contained_button_4">family</string>
+    <string name="contained_button_5">editors choice</string>
+    <string name="title1">New + Updated Games</string>
+    <string name="content_description_media">image</string>
+    <string name="title">Criminal Case</string>
+    <string name="secondary_text">Pretty Simple</string>
+    <string name="action_1">4.5</string>
+    <string name="_4_5">4.5</string>
+    <string name="free">FREE</string>
+    <string name="icon">icon</string>
+    <string name="recommended_for_you">Recommended for You</string>
+</resources>

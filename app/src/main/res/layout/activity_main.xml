@@ -1,0 +1,1395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_menu_24dp"
+            app:menu="@menu/main_menu"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            >
+            <EditText
+                android:id="@+id/searchInput"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:background="@color/secondaryColor"
+                android:hint="@string/google_play"
+                android:paddingStart="10dp"
+                android:textSize="20sp"
+                tools:ignore="RtlSymmetry"
+                android:autofillHints="" />
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primaryDarkColor"
+            app:tabTextColor="@color/secondaryColor"
+            app:tabSelectedTextColor="@color/secondaryColor"
+            app:tabIndicatorColor="@color/secondaryColor">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_label_1"
+                />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_label_2"
+                />
+        </com.google.android.material.tabs.TabLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Note: A RecyclerView can also be used -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:layout_editor_absoluteX="-195dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <!-- Scrollable content -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <HorizontalScrollView
+                android:id="@+id/scollViewHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:scrollbars="none"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/topContained"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="20dp">
+
+                    <Button
+                        android:id="@+id/containedButton1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="@string/contained_button_1"
+                        android:textColor="@color/secondaryColor"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/containedButton2"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_chainStyle="spread"
+                        android:layout_marginHorizontal="10dp"/>
+                    <Button
+                        android:id="@+id/containedButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="@string/contained_button_2"
+                        android:textColor="@color/secondaryColor"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/containedButton1"
+                        app:layout_constraintRight_toLeftOf="@id/containedButton3"
+                        android:layout_marginHorizontal="10dp"/>
+                    <Button
+                        android:id="@+id/containedButton3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="@string/contained_button_3"
+                        android:textColor="@color/secondaryColor"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/containedButton2"
+                        app:layout_constraintRight_toLeftOf="@id/containedButton4"
+                        android:layout_marginHorizontal="10dp"/>
+                    <Button
+                        android:id="@+id/containedButton4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="@string/contained_button_4"
+                        android:textColor="@color/secondaryColor"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/containedButton3"
+                        app:layout_constraintRight_toLeftOf="@id/containedButton5"
+                        android:layout_marginHorizontal="10dp"/>
+                    <Button
+                        android:id="@+id/containedButton5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="@string/contained_button_5"
+                        android:textColor="@color/secondaryColor"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/containedButton4"
+                        android:layout_marginHorizontal="10dp"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/scollViewHorizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:paddingHorizontal="20dp">
+                <TextView
+                    android:id="@+id/titleText1"
+                    android:text="@string/title1"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/moreBtn1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+                <Button
+                    android:id="@+id/moreBtn1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/more"
+                    app:layout_constraintLeft_toRightOf="@id/titleText1"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <HorizontalScrollView
+                android:id="@+id/scollViewHorizontal2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/constraintLayout1"
+                app:layout_constraintBottom_toTopOf="@id/constraintLayout3"
+                tools:ignore="ScrollViewCount,UselessParent"
+                android:paddingHorizontal="10dp">
+
+            <LinearLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card2"
+                        android:layout_width="150dp"
+                        android:layout_height="250dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="5dp"
+                        android:backgroundTint="@color/white"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Media -->
+                            <ImageView
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                app:srcCompat="@drawable/original"
+                                android:scaleType="centerCrop"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="10dp"
+                                android:contentDescription="@string/content_description_media"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                >
+
+                                <!-- Title, secondary and supporting text -->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/title"
+                                    android:textAppearance="?attr/textAppearanceHeadline6"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/secondary_text"
+                                    android:textAppearance="?attr/textAppearanceBody2"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    />
+
+                            </LinearLayout>
+
+                            <!-- Buttons -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/rateWrapper2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toLeftOf="@id/priceText2"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                    tools:ignore="UseCompoundDrawables">
+                                    <TextView
+                                        android:id="@+id/rateText2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/_4_5"
+                                        android:textSize="15sp"
+                                        tools:ignore="TooDeepLayout" />
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_marginStart="5dp"
+                                        android:src="@drawable/ic_baseline_star_rate_24"
+                                        android:contentDescription="@string/icon" />
+                                </LinearLayout>
+                                <TextView
+                                    android:id="@+id/priceText2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:text="@string/free"
+                                    android:textColor="@color/primaryDarkColor"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintLeft_toRightOf="@id/rateWrapper2"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card3"
+                        android:layout_width="150dp"
+                        android:layout_height="250dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="5dp"
+                        android:backgroundTint="@color/white"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Media -->
+                            <ImageView
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                app:srcCompat="@drawable/original"
+                                android:scaleType="centerCrop"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="10dp"
+                                android:contentDescription="@string/content_description_media"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                >
+
+                                <!-- Title, secondary and supporting text -->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/title"
+                                    android:textAppearance="?attr/textAppearanceHeadline6"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/secondary_text"
+                                    android:textAppearance="?attr/textAppearanceBody2"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    />
+
+                            </LinearLayout>
+
+                            <!-- Buttons -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/rateWrapper3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toLeftOf="@id/priceText3"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                    tools:ignore="UseCompoundDrawables">
+                                    <TextView
+                                        android:id="@+id/rateText3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/_4_5"
+                                        android:textSize="15sp"
+                                        />
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_marginStart="5dp"
+                                        android:src="@drawable/ic_baseline_star_rate_24"
+                                        android:contentDescription="@string/icon" />
+                                </LinearLayout>
+                                <TextView
+                                    android:id="@+id/priceText3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:text="@string/free"
+                                    android:textColor="@color/primaryDarkColor"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintLeft_toRightOf="@id/rateWrapper3"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card4"
+                        android:layout_width="150dp"
+                        android:layout_height="250dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="5dp"
+                        android:backgroundTint="@color/white"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Media -->
+                            <ImageView
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                app:srcCompat="@drawable/original"
+                                android:scaleType="centerCrop"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="10dp"
+                                android:contentDescription="@string/content_description_media"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                >
+
+                                <!-- Title, secondary and supporting text -->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/title"
+                                    android:textAppearance="?attr/textAppearanceHeadline6"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/secondary_text"
+                                    android:textAppearance="?attr/textAppearanceBody2"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    />
+
+                            </LinearLayout>
+
+                            <!-- Buttons -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/rateWrapper4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toLeftOf="@id/priceText4"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                    tools:ignore="UseCompoundDrawables">
+                                    <TextView
+                                        android:id="@+id/rateText4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/_4_5"
+                                        android:textSize="15sp"
+                                        />
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_marginStart="5dp"
+                                        android:src="@drawable/ic_baseline_star_rate_24"
+                                        android:contentDescription="@string/icon" />
+                                </LinearLayout>
+                                <TextView
+                                    android:id="@+id/priceText4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:text="@string/free"
+                                    android:textColor="@color/primaryDarkColor"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintLeft_toRightOf="@id/rateWrapper4"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card5"
+                        android:layout_width="150dp"
+                        android:layout_height="250dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="5dp"
+                        android:backgroundTint="@color/white"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Media -->
+                            <ImageView
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                app:srcCompat="@drawable/original"
+                                android:scaleType="centerCrop"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="10dp"
+                                android:contentDescription="@string/content_description_media"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                >
+
+                                <!-- Title, secondary and supporting text -->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/title"
+                                    android:textAppearance="?attr/textAppearanceHeadline6"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/secondary_text"
+                                    android:textAppearance="?attr/textAppearanceBody2"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    />
+
+                            </LinearLayout>
+
+                            <!-- Buttons -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/rateWrapper5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toLeftOf="@id/priceText5"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                    tools:ignore="UseCompoundDrawables">
+                                    <TextView
+                                        android:id="@+id/rateText5"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/_4_5"
+                                        android:textSize="15sp"
+                                        />
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_marginStart="5dp"
+                                        android:src="@drawable/ic_baseline_star_rate_24"
+                                        android:contentDescription="@string/icon" />
+                                </LinearLayout>
+                                <TextView
+                                    android:id="@+id/priceText5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:text="@string/free"
+                                    android:textColor="@color/primaryDarkColor"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintLeft_toRightOf="@id/rateWrapper5"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card6"
+                        android:layout_width="150dp"
+                        android:layout_height="250dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="5dp"
+                        android:backgroundTint="@color/white"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Media -->
+                            <ImageView
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                app:srcCompat="@drawable/original"
+                                android:scaleType="centerCrop"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="10dp"
+                                android:contentDescription="@string/content_description_media"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                >
+
+                                <!-- Title, secondary and supporting text -->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/title"
+                                    android:textAppearance="?attr/textAppearanceHeadline6"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/secondary_text"
+                                    android:textAppearance="?attr/textAppearanceBody2"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    />
+
+                            </LinearLayout>
+
+                            <!-- Buttons -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/rateWrapper6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toLeftOf="@id/priceText6"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                    tools:ignore="UseCompoundDrawables">
+                                    <TextView
+                                        android:id="@+id/rateText6"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/_4_5"
+                                        android:textSize="15sp"
+                                        />
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_marginStart="5dp"
+                                        android:src="@drawable/ic_baseline_star_rate_24"
+                                        android:contentDescription="@string/icon" />
+                                </LinearLayout>
+                                <TextView
+                                    android:id="@+id/priceText6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:text="@string/free"
+                                    android:textColor="@color/primaryDarkColor"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintLeft_toRightOf="@id/rateWrapper6"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card"
+                        android:layout_width="150dp"
+                        android:layout_height="250dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="5dp"
+                        android:backgroundTint="@color/white"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Media -->
+                            <ImageView
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                app:srcCompat="@drawable/original"
+                                android:scaleType="centerCrop"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="10dp"
+                                android:contentDescription="@string/content_description_media"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                tools:ignore="TooManyViews">
+
+                                <!-- Title, secondary and supporting text -->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/title"
+                                    android:textAppearance="?attr/textAppearanceHeadline6"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/secondary_text"
+                                    android:textAppearance="?attr/textAppearanceBody2"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    />
+
+                            </LinearLayout>
+
+                            <!-- Buttons -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/rateWrapper"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toLeftOf="@id/priceText"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                    tools:ignore="UseCompoundDrawables">
+                                    <TextView
+                                        android:id="@+id/rateText"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/_4_5"
+                                        android:textSize="15sp"
+                                        />
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_marginStart="5dp"
+                                        android:src="@drawable/ic_baseline_star_rate_24"
+                                        android:contentDescription="@string/icon" />
+                                </LinearLayout>
+                                <TextView
+                                    android:id="@+id/priceText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:text="@string/free"
+                                    android:textColor="@color/primaryDarkColor"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintLeft_toRightOf="@id/rateWrapper"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+            </HorizontalScrollView>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/scollViewHorizontal2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:paddingHorizontal="20dp">
+                <TextView
+                    android:id="@+id/titleText2"
+                    android:text="@string/recommended_for_you"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/moreBtn2"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+                <Button
+                    android:id="@+id/moreBtn2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/more"
+                    app:layout_constraintLeft_toRightOf="@id/titleText2"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <HorizontalScrollView
+                android:id="@+id/scollViewHorizontal3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/constraintLayout3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="ScrollViewCount,UselessParent"
+                android:paddingHorizontal="10dp">
+
+                <LinearLayout
+                    android:id="@+id/constraintLayout4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card7"
+                        android:layout_width="150dp"
+                        android:layout_height="250dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="5dp"
+                        android:backgroundTint="@color/white"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:layout_width="145dp"
+                            android:layout_height="240dp"
+                            android:orientation="vertical">
+
+                            <!-- Media -->
+                            <ImageView
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="10dp"
+                                android:contentDescription="@string/content_description_media"
+                                android:scaleType="centerCrop"
+                                app:srcCompat="@drawable/original" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                                <!-- Title, secondary and supporting text -->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/title"
+                                    android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/secondary_text"
+                                    android:textAppearance="?attr/textAppearanceBody2"
+                                    android:textColor="?android:attr/textColorSecondary" />
+
+                            </LinearLayout>
+
+                            <!-- Buttons -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/rateWrapper7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toLeftOf="@id/priceText7"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:ignore="UseCompoundDrawables">
+
+                                    <TextView
+                                        android:id="@+id/rateText7"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/_4_5"
+                                        android:textSize="15sp"
+                                        tools:ignore="TooDeepLayout" />
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_marginStart="5dp"
+                                        android:contentDescription="@string/icon"
+                                        android:src="@drawable/ic_baseline_star_rate_24" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/priceText7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:text="@string/free"
+                                    android:textColor="@color/primaryDarkColor"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toRightOf="@id/rateWrapper7"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card8"
+                        android:layout_width="150dp"
+                        android:layout_height="250dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="5dp"
+                        android:backgroundTint="@color/white"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Media -->
+                            <ImageView
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                app:srcCompat="@drawable/original"
+                                android:scaleType="centerCrop"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="10dp"
+                                android:contentDescription="@string/content_description_media"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                >
+
+                                <!-- Title, secondary and supporting text -->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/title"
+                                    android:textAppearance="?attr/textAppearanceHeadline6"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/secondary_text"
+                                    android:textAppearance="?attr/textAppearanceBody2"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    />
+
+                            </LinearLayout>
+
+                            <!-- Buttons -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/rateWrapper8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toLeftOf="@id/priceText8"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                    tools:ignore="UseCompoundDrawables">
+                                    <TextView
+                                        android:id="@+id/rateText8"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/_4_5"
+                                        android:textSize="15sp"
+                                        />
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_marginStart="5dp"
+                                        android:src="@drawable/ic_baseline_star_rate_24"
+                                        android:contentDescription="@string/icon" />
+                                </LinearLayout>
+                                <TextView
+                                    android:id="@+id/priceText8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:text="@string/free"
+                                    android:textColor="@color/primaryDarkColor"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintLeft_toRightOf="@id/rateWrapper8"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card9"
+                        android:layout_width="150dp"
+                        android:layout_height="250dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="5dp"
+                        android:backgroundTint="@color/white"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Media -->
+                            <ImageView
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                app:srcCompat="@drawable/original"
+                                android:scaleType="centerCrop"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="10dp"
+                                android:contentDescription="@string/content_description_media"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                >
+
+                                <!-- Title, secondary and supporting text -->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/title"
+                                    android:textAppearance="?attr/textAppearanceHeadline6"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/secondary_text"
+                                    android:textAppearance="?attr/textAppearanceBody2"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    />
+
+                            </LinearLayout>
+
+                            <!-- Buttons -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/rateWrapper9"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toLeftOf="@id/priceText9"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                    tools:ignore="UseCompoundDrawables">
+                                    <TextView
+                                        android:id="@+id/rateText9"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/_4_5"
+                                        android:textSize="15sp"
+                                        />
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_marginStart="5dp"
+                                        android:src="@drawable/ic_baseline_star_rate_24"
+                                        android:contentDescription="@string/icon" />
+                                </LinearLayout>
+                                <TextView
+                                    android:id="@+id/priceText9"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:text="@string/free"
+                                    android:textColor="@color/primaryDarkColor"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintLeft_toRightOf="@id/rateWrapper9"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card10"
+                        android:layout_width="150dp"
+                        android:layout_height="250dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="5dp"
+                        android:backgroundTint="@color/white"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Media -->
+                            <ImageView
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                app:srcCompat="@drawable/original"
+                                android:scaleType="centerCrop"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="10dp"
+                                android:contentDescription="@string/content_description_media"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                >
+
+                                <!-- Title, secondary and supporting text -->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/title"
+                                    android:textAppearance="?attr/textAppearanceHeadline6"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/secondary_text"
+                                    android:textAppearance="?attr/textAppearanceBody2"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    />
+
+                            </LinearLayout>
+
+                            <!-- Buttons -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/rateWrapper10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toLeftOf="@id/priceText10"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                    tools:ignore="UseCompoundDrawables">
+                                    <TextView
+                                        android:id="@+id/rateText10"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/_4_5"
+                                        android:textSize="15sp"
+                                        />
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_marginStart="5dp"
+                                        android:src="@drawable/ic_baseline_star_rate_24"
+                                        android:contentDescription="@string/icon" />
+                                </LinearLayout>
+                                <TextView
+                                    android:id="@+id/priceText10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:text="@string/free"
+                                    android:textColor="@color/primaryDarkColor"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintLeft_toRightOf="@id/rateWrapper10"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card11"
+                        android:layout_width="150dp"
+                        android:layout_height="250dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="5dp"
+                        android:backgroundTint="@color/white"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Media -->
+                            <ImageView
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                app:srcCompat="@drawable/original"
+                                android:scaleType="centerCrop"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="10dp"
+                                android:contentDescription="@string/content_description_media"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                >
+
+                                <!-- Title, secondary and supporting text -->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/title"
+                                    android:textAppearance="?attr/textAppearanceHeadline6"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/secondary_text"
+                                    android:textAppearance="?attr/textAppearanceBody2"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    />
+
+                            </LinearLayout>
+
+                            <!-- Buttons -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/rateWrapper11"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toLeftOf="@id/priceText11"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                    tools:ignore="UseCompoundDrawables">
+                                    <TextView
+                                        android:id="@+id/rateText11"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/_4_5"
+                                        android:textSize="15sp"
+                                        />
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_marginStart="5dp"
+                                        android:src="@drawable/ic_baseline_star_rate_24"
+                                        android:contentDescription="@string/icon" />
+                                </LinearLayout>
+                                <TextView
+                                    android:id="@+id/priceText11"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:text="@string/free"
+                                    android:textColor="@color/primaryDarkColor"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintLeft_toRightOf="@id/rateWrapper11"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card12"
+                        android:layout_width="150dp"
+                        android:layout_height="250dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="5dp"
+                        android:backgroundTint="@color/white"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Media -->
+                            <ImageView
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                app:srcCompat="@drawable/original"
+                                android:scaleType="centerCrop"
+                                android:layout_gravity="center"
+                                android:layout_marginVertical="10dp"
+                                android:contentDescription="@string/content_description_media"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                tools:ignore="TooManyViews">
+
+                                <!-- Title, secondary and supporting text -->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/title"
+                                    android:textAppearance="?attr/textAppearanceHeadline6"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/secondary_text"
+                                    android:textAppearance="?attr/textAppearanceBody2"
+                                    android:textColor="?android:attr/textColorSecondary"
+                                    />
+
+                            </LinearLayout>
+
+                            <!-- Buttons -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/rateWrapper12"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toLeftOf="@id/priceText12"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintHorizontal_chainStyle="spread_inside">
+                                    <TextView
+                                        android:id="@+id/rateText12"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/_4_5"
+                                        android:textSize="15sp"
+                                        />
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_marginStart="5dp"
+                                        android:src="@drawable/ic_baseline_star_rate_24"
+                                        android:contentDescription="@string/icon" />
+                                </LinearLayout>
+                                <TextView
+                                    android:id="@+id/priceText12"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:text="@string/free"
+                                    android:textColor="@color/primaryDarkColor"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintLeft_toRightOf="@id/rateWrapper12"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

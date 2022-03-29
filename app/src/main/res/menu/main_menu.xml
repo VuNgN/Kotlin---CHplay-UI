@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/mic"
+        android:icon="@drawable/ic_baseline_mic_24"
+        android:title="Mic"
+        android:contentDescription="Mic description"
+        app:showAsAction="ifRoom"/>
+</menu>
